@@ -6,7 +6,7 @@ function Login(){
         console.log(formValues);
     }
     return (
-        <div className="bg-[url('/Login/login-bg.jpg')] bg-cover bg-center bg-blue-900/70 bg-blend-multiply min-h-screen">
+        <div className="bg-[url('/Admin/Login/login-bg.jpg')] bg-cover bg-center bg-blue-900/70 bg-blend-multiply min-h-screen">
             <div>
                 <div className="w-full my-auto h-screen flex flex-col justify-center items-center text-white">
                     <h1 className='text-center text-4xl mt-8'>Login</h1>
