@@ -1,62 +1,51 @@
-'use client'
+import Link from "next/link";
 function Login(){
-
+    
     return (
         <div className="h-screen flex">
-            <div className="left bg-[url('/User/Login/Login_user.jpg')] bg-cover bg-center basis-1/3">
-            <div className="bg-navyblue/80 h-full text-white">
-                <img src="/kris-logo.png" alt="logo" width="200px" className="pt-10 " />
-                <div className="content mt-10 px-5">
-                    <h1 className="text-3xl">HR Management Platform</h1>
-                    <svg width="160" height="30" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="140" height="18" x="8" y="8" rx="10" ry="10" fill="white" />
-                    </svg>
-                    <h3>Manage all employees, payrolls, and other human resource operations.</h3>
-                    <div className="flex mt-2">
-                        <button className="me-3 py-2 px-6 rounded-md text-black bg-yellow-500">Learn More</button>
-                        <button className="me-3 py-2 px-6 rounded-md border">Our Features</button>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div className="right basis-2/3 pt-18 px-18">
-                <h1 className="text-6xl">Welcome to KRIS</h1>
-                <p className="text-gray-500 mt-2 text-2xl">Register your account</p>
-                <div className="user-register mt-4 w-3xl">
-                    <form>
-                        <div className="flex gap-4">
-                            <div className="basis-1/2">
-                                <label htmlFor="firstname" className="text-navyblue">First Name</label> <br />
-                                <input type="text" name="firstName" id="firstname" className="border rounded-sm w-full h-8" />
-                            </div>
-                            <div className="basis-1/2">
-                                <label htmlFor="lastname" className="text-navyblue">Last Name</label> <br />
-                                <input type="text" name="lastName" id="lastname" className="border rounded-sm w-full h-8" />
-                            </div>
+            <div className="left-login basis-1/3">
+                <img src="/kris-logo-dark.png" alt="logo" width="200px" className="pt-10 " />
+                <div className="px-10">
+                    <h1 className='text-4xl mt-8 text-navyblue'>Login</h1>
+                    <h3 className='text-2xl mt-3 text-gray-500'>Login to your account</h3>
+                    <form className="mt-4">
+                        <div>
+                            <label htmlFor="email" className="text-navyblue">E-mail address</label><br />
+                            <input type="email" id='email' className='w-full my-2 py-1 border border-gray-500'/>
                         </div>
-                        <div className="flex gap-4 mt-5">
-                            <div className="basis-1/2">
-                                <label htmlFor="email" className="text-navyblue">E-mail Address</label> <br />
-                                <input type="email" name="email" id="email" className="border rounded-sm w-full h-8" />
-                            </div>
-                            <div className="basis-1/2">
-                                <label htmlFor="phoneno" className="text-navyblue">Phone Number</label> <br />
-                                <input type="number" name="phoneno" id="phoneno" className="border rounded-sm w-full h-8" />
-                            </div>
+                        <div className="mt-3">
+                            <label htmlFor="password" className="text-navyblue">Password</label> <br />
+                            <input type="password" id='password' className='w-full my-2 py-1 border border-gray-500'/>
                         </div>
-                        <div className="flex gap-4 mt-5">
-                            <div className="basis-1/2">
-                                <label htmlFor="password" className="text-navyblue">Password</label> <br />
-                                <input type="password" name="password" id="password" className="border rounded-sm w-full h-8" />
+                        <div className='flex justify-between w-full my-2'>
+                            <div>
+                                <input type="checkbox" name="rememberme" id="rememberme" className='me-1'/>
+                                <label htmlFor="rememberme" className="text-gray-500">Remember me</label>
                             </div>
-                            <div className="basis-1/2">
-                                <label htmlFor="confirmpassword" className="text-navyblue">Confirm Password</label> <br />
-                                <input type="password" name="confirmpassword" id="confirmpassword" className="border rounded-sm w-full h-8" />
-                            </div>
+                            <a href="#" className="text-navyblue">Reset Password?</a>
                         </div>
+                        <button className='py-2 mt-3 w-full text-white bg-navyblue'>Sign In</button>
+                        <p className="mt-3 text-center text-gray-500">Don’t have an account yet? <Link href="/User/Register" className="text-navyblue">Join KRIS today.</Link></p>
                         
                     </form>
                 </div>
+            </div>
+            <div className="right-login bg-[url('/User/Login/user_login.jpg')] bg-cover bg-center basis-2/3">
+                <div className="bg-navyblue/70 h-full text-white flex flex-col justify-center px-14 gap-y-4">
+                    <h1 className="text-5xl mt-19">Manage all HR Operations from the comfort of your home.</h1>
+                    <div className="flex flex-row">
+                        <svg width="160" height="30" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="140" height="18" x="8" y="8" rx="10" ry="10" fill="white" />
+                        </svg>
+                        <svg width="160" height="30" xmlns="http://www.w3.org/2000/svg" className="">
+                            <rect width="140" height="18" x="8" y="8" rx="10" ry="10" fill="white" />
+                        </svg>
+                        <svg width="160" height="30" xmlns="http://www.w3.org/2000/svg" className="">
+                            <rect width="140" height="18" x="8" y="8" rx="10" ry="10" fill="white" />
+                        </svg>
+                    </div>
+                </div>
+
             </div>
         </div>
     )
