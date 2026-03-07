@@ -1,7 +1,7 @@
 import Link from "next/link";
 function Dashboard(){
     const actionButtons = [
-        { name: 'Apply for Leave', link: 'apply-leave' },
+        { name: 'Apply for Leave', link: 'Applyleave' },
         { name: 'KPI Goals', link: 'kpi-goals' },
         { name: 'Take Appraisal', link: 'take-appraisal' },
         { name: 'View Payslip', link: 'view-payslip' },
@@ -23,7 +23,7 @@ function Dashboard(){
             <h3 className="text-navyblue mt-4 text-1xl font-bold">Quick Actions</h3>
             <div className="flex mt-2 text-navyblue font-semibold gap-x-10">
                 {actionButtons.map((action) => (
-                    <Link key={action.name} href={`/User/${action.link}`} className={`rounded-full bg-white px-4 py-1 shadow-xl text-center basis-1/${actionButtons.length}`}>{action.name}</Link>
+                    <Link key={action.name} href={`Dashboard/${action.link}`} className={`rounded-full bg-white px-4 py-1 shadow-xl text-center basis-1/${actionButtons.length}`}>{action.name}</Link>
                 ))}
             </div>
         </div>
