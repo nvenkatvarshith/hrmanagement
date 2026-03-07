@@ -11,6 +11,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-navyblue:#253D90;
+  --color-dashboardbg:#D3E3FD;
 }
 
 @media (prefers-color-scheme: dark) {
