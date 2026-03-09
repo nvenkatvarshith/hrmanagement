@@ -1,3 +1,4 @@
+"use client"
 import BreadCrumb from "@/app/Components/BreadCrumb";
 import Link from "next/link";
 function Applyleave(){
@@ -7,25 +8,25 @@ function Applyleave(){
                 id: 1, 
                 title: "Annual Leave", 
                 balance: 60, 
-                link: "/leaves/apply/annual" 
+                link: "Applyleave/leaves/apply/annual" 
             },
             { 
                 id: 2, 
                 title: "Sick Leave", 
                 balance: 20, 
-                link: "/leaves/apply/sick" 
+                link: "Applyleave/leaves/apply/sick" 
             },
             { 
                 id: 3, 
                 title: "Maternity Leave", 
                 balance: 60, 
-                link: "/leaves/apply/maternity" 
+                link: "Applyleave/leaves/apply/maternity" 
             },
             { 
                 id: 4, 
                 title: "Compassionate Leave", 
                 balance: 30, 
-                link: "/leaves/apply/compassionate" 
+                link: "Applyleave/leaves/apply/compassionate" 
             }
             ];
     
