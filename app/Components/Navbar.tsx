@@ -22,7 +22,7 @@ function Navbar(){
             <div>
                 <span className="rounded-full bg-navyblue text-white p-2 me-3"><i className="fa-solid fa-bell"></i></span>
                 <span className="rounded-full bg-green-700 text-white p-2 me-3"><i className="fa-solid fa-envelope"></i></span>
-                <span className="rounded-full bg-orange-300 text-white p-2"><i className="fa-solid fa-user"></i></span>
+                <Link href="/User/Dashboard/UpdateProfile"><span className="rounded-full bg-orange-300 text-white p-2"><i className="fa-solid fa-user"></i></span></Link>
             </div>
         </div>
     )
