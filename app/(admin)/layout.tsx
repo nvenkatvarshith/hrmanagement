@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./../globals.css";
+import Sidebar from "../Components/admin/Sidebar";
+import Navbar from "../Components/admin/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +33,15 @@ export default function AdminLayout({
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}   >
-        {children}
+        <div className="flex">
+            <div className="basis-1/4">
+                <Sidebar />
+            </div>
+            <div className="basis-3/4 bg-blue-200/60">
+              <Navbar />
+              {children}
+            </div>
+        </div>
       </body>
     </html>
   );
