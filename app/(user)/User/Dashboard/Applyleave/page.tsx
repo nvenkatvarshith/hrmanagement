@@ -8,25 +8,25 @@ function Applyleave(){
                 id: 1, 
                 title: "Annual Leave", 
                 balance: 60, 
-                link: "Applyleave/leaves/apply/annual" 
+                link: "Applyleave/leaves" 
             },
             { 
                 id: 2, 
                 title: "Sick Leave", 
                 balance: 20, 
-                link: "Applyleave/leaves/apply/sick" 
+                link: "Applyleave/leaves" 
             },
             { 
                 id: 3, 
                 title: "Maternity Leave", 
                 balance: 60, 
-                link: "Applyleave/leaves/apply/maternity" 
+                link: "Applyleave/leaves" 
             },
             { 
                 id: 4, 
                 title: "Compassionate Leave", 
                 balance: 30, 
-                link: "Applyleave/leaves/apply/compassionate" 
+                link: "Applyleave/leaves" 
             }
             ];
     
