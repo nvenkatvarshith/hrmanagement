@@ -2,6 +2,9 @@
 import BreadCrumb from "@/app/Components/BreadCrumb";
 import Contact from "@/app/Components/profile/Contact";
 import Education from "@/app/Components/profile/Education";
+import FamilyDetails from "@/app/Components/profile/FamilyDetails";
+import Guarantor from "@/app/Components/profile/Guarantor";
+import JobDetails from "@/app/Components/profile/JobDetails";
 import Kin from "@/app/Components/profile/Kin";
 import Personal from "@/app/Components/profile/Personal";
 import Sidebarprofile from "@/app/Components/Sidebarprofile";
@@ -20,6 +23,12 @@ function UpdateProfile(){
             return <Kin/>
         }else if(activeSection === "Education Qualifications"){
             return <Education/>
+        }else if(activeSection === "Guarantor Details"){
+            return <Guarantor/>
+        }else if(activeSection === "Family Details"){
+            return <FamilyDetails/>
+        }else if(activeSection === "Job Details"){
+            return <JobDetails/>
         }else{
 
         }

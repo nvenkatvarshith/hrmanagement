@@ -122,9 +122,11 @@ function Applyleave(){
                     </div>
                     <table className="w-full mt-2 ">
                         <thead className="bg-blue-200/60">
-                            {tableHeaders.map((header) => (
-                                <th key={header} className="py-3">{header}</th>
-                            ))}                            
+                            <tr>
+                                {tableHeaders.map((header) => (
+                                    <th key={header} className="py-3">{header}</th>
+                                ))}                            
+                            </tr>
                         </thead>
                         <tbody className="text-center">
                             {
@@ -138,7 +140,6 @@ function Applyleave(){
                                         <td>{leave.reason}</td>
                                         <td className="py-2"><button className="bg-navyblue px-5 py-2 text-white rounded-md">Actions <i className="fa-solid fa-angle-down"></i></button></td>
                                     </tr>
-                                    
                                 ))
                             }
                         </tbody>
