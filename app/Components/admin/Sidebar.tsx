@@ -1,39 +1,41 @@
-function Sidebar(){
+import Link from "next/link";
+
+function Sidebar() {
     const sidebarNav = [
         {
             section: "Features",
             items: [
-            { name: "Dashboard", icon: "fa-solid fa-house", link: "/dashboard", active: true },
-            { name: "Messages", icon: "fa-solid fa-envelope", link: "/messages", badge: 13 }
+                { name: "Dashboard", icon: "fa-solid fa-house", link: "/Admin/Dashboard", active: true },
+                { name: "Messages", icon: "fa-solid fa-envelope", link: "/messages", badge: 13 }
             ]
         },
         {
             section: "Recruitment",
             items: [
-            { name: "Jobs", icon: "fa-solid fa-briefcase", link: "/jobs" },
-            { name: "Candidates", icon: "fa-solid fa-users", link: "/candidates" },
-            { name: "Resumes", icon: "fa-solid fa-file-lines", link: "/resumes" }
+                { name: "Jobs", icon: "fa-solid fa-briefcase", link: "/jobs" },
+                { name: "Candidates", icon: "fa-solid fa-users", link: "/candidates" },
+                { name: "Resumes", icon: "fa-solid fa-file-lines", link: "/resumes" }
             ]
         },
         {
             section: "Organization",
             items: [
-            { name: "Employee Management", icon: "fa-solid fa-user", link: "/employees" },
-            { name: "Leave Management", icon: "fa-solid fa-book-open", link: "/leaves" },
-            { name: "Performance Management", icon: "fa-solid fa-scale-balanced", link: "/performance" }
+                { name: "Employee Management", icon: "fa-solid fa-user", link: "/employees" },
+                { name: "Leave Management", icon: "fa-solid fa-book-open", link: "/Admin/Leave" },
+                { name: "Performance Management", icon: "fa-solid fa-scale-balanced", link: "/performance" }
             ]
         },
         {
             section: "KRIS Pay",
             items: [
-            { name: "Payroll Management", icon: "fa-solid fa-money-bill-1", link: "/payroll" }
+                { name: "Payroll Management", icon: "fa-solid fa-money-bill-1", link: "/payroll" }
             ]
         }
     ];
 
     return (
         <div className="bg-indigo-900 text-white pb-4 px-2">
-            <img src="/kris-logo.png" alt="logo" width="200px" className="ms-3 pt-3"/>
+            <img src="/kris-logo.png" alt="logo" width="200px" className="ms-3 pt-3" />
             <div className="flex justify-center items-center my-3">
                 <i className="fa-solid fa-user basis-1/3 text-5xl"></i>
                 <div className="basis-2/3">
@@ -47,10 +49,12 @@ function Sidebar(){
                         <h3>{section.section}</h3>
                         {section.items.map((navitem) => {
                             return (
-                                <div className="ps-2 text-[16px] py-1 mt-1" key={navitem.name}>
-                                    <i className={navitem.icon}></i>
-                                    <span className="ms-3">{navitem.name}</span>
-                                </div>
+                                <Link href={navitem.link} key={navitem.name}>
+                                    <div className="ps-2 text-[16px] py-1 mt-1">
+                                        <i className={navitem.icon}></i>
+                                        <span className="ms-3">{navitem.name}</span>
+                                    </div>
+                                </Link>
                             )
                         })}
                     </div>
