@@ -25,24 +25,14 @@ export default function AdminLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com"/>
-        <link href="https://fonts.googleapis.com/css2?family=Alatsi&display=swap" rel="stylesheet"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}   >
-        <div className="flex">
-            <div className="basis-1/4">
-                <Sidebar />
-            </div>
-            <div className="basis-3/4 bg-blue-200/60">
-              <Navbar />
-              {children}
-            </div>
+    <div className="flex">
+        <div className="basis-1/4">
+            <Sidebar />
         </div>
-      </body>
-    </html>
+        <div className="basis-3/4 bg-blue-200/60">
+          <Navbar />
+          {children}
+        </div>
+    </div>
   );
 }

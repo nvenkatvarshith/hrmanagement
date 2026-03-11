@@ -105,7 +105,7 @@ function ReliefOfficers(){
                     <tbody>
                         {leaveSettings.map((setting) => {
                             return (
-                                <tr>
+                                <tr key={setting.id}>
                                     <td className="py-3">{setting.leavePlan}</td>
                                     <td className="py-3">{setting.durationDays}</td>
                                     <td className="py-3">{(setting.recall)?"Yes":"No"}/{setting.autoRenew?"Yes":"No"}</td>

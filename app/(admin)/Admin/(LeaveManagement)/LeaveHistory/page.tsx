@@ -92,7 +92,7 @@ function LeaveHistory() {
                 </thead>
                 <tbody>
                     {leaveHistory.map((leaveRow) => (
-                        <tr>
+                        <tr key={leaveRow.id}>
                             <td>{leaveRow.employeeName}</td>
                             <td>{leaveRow.duration}</td>
                             <td>{leaveRow.startDate}</td>
