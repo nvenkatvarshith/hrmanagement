@@ -1,3 +1,18 @@
+"use client"
+import RecallForm from "@/app/Components/admin/LeaveManagement/RecallForm";
+import { useState } from "react";
+
+interface Leave{
+    id: number;
+    employeeName: string;
+    duration: number;
+    startDate: string;
+    endDate: string;
+    type: string;
+    reason: string;
+    status: string;
+}
+
 function LeaveRecall() {
     const ongoingHeaders = ["Name(s)", "Duration(s)", "Start Date", "End Date", "Type", "Reason(s)", "Actions"];
     const ongoingLeaves = [
@@ -72,8 +87,11 @@ function LeaveRecall() {
             status: "Ongoing"
         }
     ];
+    const [showRecallForm, setShowRecallForm] = useState(false);
+    const [currentLeave, setCurrentLeave] = useState<Leave>(ongoingLeaves[0]);
     return (
         <div className="bg-white mt-5 p-4 rounded-lg font-bold">
+            {showRecallForm && <RecallForm currentLeave={currentLeave} />}
             <p className="text-1xl ps-2">Ongoing Leave Applications</p>
             <table className="w-full text-left mt-4 text-sm">
                 <thead>
@@ -85,18 +103,19 @@ function LeaveRecall() {
                 </thead>
                 <tbody>
                     {ongoingLeaves.map((leaveRow) => (
-                        <tr>
+                        <tr key={leaveRow.id}>
                             <td>{leaveRow.employeeName}</td>
                             <td>{leaveRow.duration}</td>
                             <td>{leaveRow.startDate}</td>
                             <td>{leaveRow.endDate}</td>
                             <td>{leaveRow.type}</td>
                             <td>{leaveRow.reason}</td>
-                            <td className="py-1"><button className="bg-red-600 rounded-md text-white py-2 w-full">Recall</button></td>
+                            <td className="py-1"><button className="bg-red-600 rounded-md cursor-pointer text-white py-2 w-full" onClick={() => {setCurrentLeave(leaveRow);setShowRecallForm(true)}}>Recall</button></td>
                         </tr>
                     ))}
                 </tbody>
             </table>
+            
         </div>
     )
 }
