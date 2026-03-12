@@ -22,7 +22,7 @@ function Sidebar() {
             items: [
                 { name: "Employee Management", icon: "fa-solid fa-user", link: "/Admin/EmployeeManagement" },
                 { name: "Leave Management", icon: "fa-solid fa-book-open", link: "/Admin/Leave" },
-                { name: "Performance Management", icon: "fa-solid fa-scale-balanced", link: "/performance" }
+                { name: "Performance Management", icon: "fa-solid fa-scale-balanced", link: "/Admin/Performance" }
             ]
         },
         {

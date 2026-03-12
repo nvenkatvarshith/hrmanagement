@@ -168,7 +168,7 @@ function Dashboard() {
                     <div className="px-2 mt-2">
                         {appliedJobs.map((job) => {
                             return (
-                                <div className="flex justify-between items-center mb-2 bg-blue-200/60 rounded-lg p-2">
+                                <div className="flex justify-between items-center mb-2 bg-blue-200/60 rounded-lg p-2" key={job.id}>
                                     <div className="flex items-center">
                                         <img src={job.logoPath} />
                                         <div className="ms-2">
