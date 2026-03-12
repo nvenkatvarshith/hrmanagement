@@ -1,4 +1,13 @@
-import Link from "next/link";
+"use client"
+
+interface Employee{
+    name: string;
+    dept: string;
+    jobTitle: string;
+    startDate: string;
+    category: string;
+    gender:string;
+}
 
 function EmployeeManagement() {
     const headers = [
@@ -69,6 +78,10 @@ function EmployeeManagement() {
         }
     ];
 
+    const viewProfile = (employee:Employee) => {
+        console.log(employee);
+    }
+
     return (
         <div className="px-5 py-9">
             <h1 className="font-bold text-1xl">Dashboard / Employee Management</h1>
@@ -98,9 +111,9 @@ function EmployeeManagement() {
                                 <td>{employee.category}</td>
                                 <td>{employee.gender}</td>
                                 <td className="py-1">
-                                    <select name="action" id="action" className="bg-navyblue rounded-md text-white text-center py-2 w-full">
+                                    <select onChange={() => viewProfile(employee)} name="action" id="action" className="bg-navyblue rounded-md text-white text-center py-2 w-full">
                                         <option value="select">Actions</option>
-                                        <option value="view-profile"><Link href="">View Profile</Link></option>
+                                        <option value="view-profile">View Profile</option>
                                         <option value="edit-profile">Edit Profile</option>
                                     </select>
                                 </td>

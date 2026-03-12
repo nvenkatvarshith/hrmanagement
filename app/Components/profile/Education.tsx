@@ -1,10 +1,18 @@
 import { useState } from "react";
 import AcademicDetails from "./AcademicDetails";
+import ProfessionalDetails from "./ProfessionalDetails";
 
 interface AcademicRecord{
     id:number;
     institution: string;
     degree: string;
+    duration: string;
+}
+
+interface ProfessionalRecord{
+    id:number;
+    title: string;
+    provider: string;
     duration: string;
 }
 function Education(){
@@ -47,11 +55,16 @@ function Education(){
         };
     
     const [currentEducation,setCurrentEducation] = useState<AcademicRecord>(educationData.academicRecords[0]);
+    const [currentProfession,setCurrentProfession] = useState<ProfessionalRecord>(educationData.professionalQualifications[0]);
     const [viewMode, setViewMode] = useState("list");
 
     const displayAcademicForm = (education:AcademicRecord) => {
         setCurrentEducation(education);
-        setViewMode("form");
+        setViewMode("Academicform");
+    }
+    const displayProfessionalForm = (profession:ProfessionalRecord) => {
+        setCurrentProfession(profession);
+        setViewMode("Professionalform");
     }
     if(viewMode === "list"){
         return (
@@ -74,7 +87,7 @@ function Education(){
                         <button className="bg-green-700 px-9 py-1 text-white cursor-pointer">Add</button>
                     </div>
                     {educationData.professionalQualifications.map((qualification) => (
-                        <div key={qualification.id} className="bg-blue-200/60 w-full px-5 py-3 rounded-xl mb-3">
+                        <div key={qualification.id} className="bg-blue-200/60 w-full px-5 py-3 rounded-xl mb-3 cursor-pointer" onClick={() => displayProfessionalForm(qualification)}>
                             <p className="text-2xl">{qualification.title}</p>
                             <p className="mt-2">{qualification.provider}{qualification.duration}</p>
                             <p>{qualification.description}</p>
@@ -84,8 +97,10 @@ function Education(){
     
             </div>
         )
-    }else{
+    }else if(viewMode === "Academicform"){
        return <AcademicDetails currentEducation = {currentEducation} />
+    }else{
+       return <ProfessionalDetails currentProfession = {currentProfession} />
     }
 }
 
