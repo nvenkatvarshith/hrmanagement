@@ -11,7 +11,22 @@ import Personal from "@/app/Components/profile/Personal";
 import Sidebarprofile from "@/app/Components/Sidebarprofile";
 import { useState } from "react";
 
-function UpdateEmployee(){
+interface Employee{
+    name: string;
+    dept: string;
+    jobTitle: string;
+    startDate: string;
+    category: string;
+    gender:string;
+}
+
+interface updateProps{
+    currentEmployee: Employee;
+}
+
+function UpdateEmployee(props: updateProps){
+    const {currentEmployee} = props;
+    console.log(currentEmployee);
     const currentUrl = "Dashboard/Update Profile";
     const [activeSection, setActiveSection] = useState("Personal Details");
     console.log(activeSection);
