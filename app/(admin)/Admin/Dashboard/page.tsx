@@ -163,6 +163,101 @@ function Dashboard() {
                 })}
             </div>
             <div className="grid grid-cols-2 mt-4 gap-2">
+                <div className="bg-white p-3 rounded-lg">
+                    <h1 className="font-bold">Applied Jobs</h1>
+                    <div className="px-2 mt-2">
+                        {appliedJobs.map((job) => {
+                            return (
+                                <div className="flex justify-between items-center mb-2 bg-blue-200/60 rounded-lg p-2">
+                                    <div className="flex items-center">
+                                        <img src={job.logoPath} />
+                                        <div className="ms-2">
+                                            <h1 className="font-bold">{job.jobTitle}</h1>
+                                            <h3 className="text-sm">{job.companyName}</h3>
+                                        </div>
+                                    </div>
+                                    <div className="text-sm">
+                                        <p className="text-gray-500">{job.timePosted}</p>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
+
+                <div className="bg-white p-3 rounded-lg">
+                    <h1 className="font-bold">Employees</h1>
+                    <div className="px-2 mt-2">
+                        {employeesList.map((employee) => {
+                            return (
+                                <div className="flex justify-between items-center mb-2 bg-blue-200/60 rounded-lg p-2">
+                                    <div className="flex items-center">
+                                        <img src={employee.avatarColor} />
+                                        <div className="ms-2">
+                                            <h1 className="font-bold">{employee.employeeName}</h1>
+                                            <h3 className="text-sm text-gray-500">Role: {employee.jobRole}</h3>
+                                        </div>
+                                    </div>
+                                    <div className="text-sm">
+                                        <span className="bg-green-700 p-2 rounded-lg"><i className="fa-solid fa-eye text-white"></i></span>
+                                        <span className="bg-navyblue ms-2 p-2 rounded-lg"><i className="fa-solid fa-download text-white"></i></span>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
+
+                <div className="bg-white p-3 rounded-lg">
+                    <h1 className="font-bold">Candidates</h1>
+                    <div className="px-2 mt-2">
+                        {candidatesList.map((candidate) => {
+                            return (
+                                <div className="flex justify-between items-center mb-2 bg-blue-200/60 rounded-lg p-2">
+                                    <div className="flex items-center">
+                                        <img src={candidate.candidateName} />
+                                        <div className="ms-2">
+                                            <h1 className="font-bold">{candidate.candidateName}</h1>
+                                            <h3 className="text-sm text-gray-500">Role: {candidate.applicationRole}</h3>
+                                        </div>
+                                    </div>
+                                    <div className="flex justify-center gap-x-3">
+                                        <div className="text-center">
+                                            <span className="text-sm">ATS Score(%)</span> <br />
+                                            <span className={`${candidate.scoreColor} p-2 rounded-full text-white`}>{candidate.atsScore}</span>
+                                        </div>
+                                        <div className="text-center">
+                                            <span className="text-sm">View</span> <br />
+                                            <span className="bg-green-700 ms-2 p-2 rounded-2xl"><i className="fa-solid fa-eye text-white"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
+
+                <div className="bg-white p-3 rounded-lg">
+                    <h1 className="font-bold">April Payrolls</h1>
+                    <div className="px-2 mt-2">
+                        {payrollData.map((payroll) => {
+                            return (
+                                <div className="flex justify-between items-center mb-2 bg-blue-200/60 rounded-lg p-2">
+                                    <div className="flex items-center">
+                                        <img src={payroll.employeeName} />
+                                        <div className="ms-2">
+                                            <h1 className="font-bold">{payroll.employeeName}</h1>
+                                            <h3 className="text-sm text-gray-500">{payroll.paymentDetail}</h3>
+                                        </div>
+                                    </div>
+                                    <div className="text-sm">
+                                        <span className={`w-66 h-2 ${payroll.barColor} p-1 rounded-xl`}>{payroll.status} {payroll.progress}%</span>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
 
             </div>
         </div>
