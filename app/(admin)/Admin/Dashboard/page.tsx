@@ -190,7 +190,7 @@ function Dashboard() {
                     <div className="px-2 mt-2">
                         {employeesList.map((employee) => {
                             return (
-                                <div className="flex justify-between items-center mb-2 bg-blue-200/60 rounded-lg p-2">
+                                <div className="flex justify-between items-center mb-2 bg-blue-200/60 rounded-lg p-2" key={employee.id}>
                                     <div className="flex items-center">
                                         <img src={employee.avatarColor} />
                                         <div className="ms-2">
